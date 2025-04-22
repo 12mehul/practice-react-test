@@ -7,8 +7,9 @@ const Navbars = () => {
       <Container>
         <Nav className="mx-auto fs-5">
           <Nav.Link href="/">Todo</Nav.Link>
-          <Nav.Link href="/products">Products</Nav.Link>
           <Nav.Link href="/counters">Counters</Nav.Link>
+          <Nav.Link href="/products">Products</Nav.Link>
+          <Nav.Link href="/add-product">Add Product</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

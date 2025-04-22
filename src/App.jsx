@@ -7,6 +7,7 @@ import Products from "./components/Products";
 import Navbars from "./components/Navbars";
 import Counters from "./components/Counters";
 import ProductsSlice from "./components/ProductsSlice";
+import AddProduct from "./components/AddProduct";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/counters" element={<Counters />} />
             <Route path="/products-slice" element={<ProductsSlice />} />
+            <Route path="/add-product" element={<AddProduct />} />
           </Routes>
         </Row>
       </Container>

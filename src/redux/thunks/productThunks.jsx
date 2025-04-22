@@ -5,6 +5,7 @@ import {
   fetchProductsSuccess,
 } from "../actions/productActions";
 import { fetchProductsService } from "../services/productService";
+import { fetchAddProductService } from "../services/addProductService";
 
 export const fetchProducts = () => async (dispatch) => {
   dispatch(fetchProductsRequest());
@@ -22,4 +23,12 @@ export const fetchProductsThunk = createAsyncThunk(
     const products = await fetchProductsService();
     return products;
   }
-)
+);
+
+export const addProductThunk = createAsyncThunk(
+  "product/addProductThunk",
+  async (product) => {
+    const data = await fetchAddProductService(product);
+    return data;
+  }
+);
