@@ -23,6 +23,10 @@ const ProductsSlice = () => {
     alert("Product deleted successfully");
   };
 
+  const handleEditClick = (id) => {
+    navigate(`/edit-product/${id}`);
+  };
+
   useEffect(() => {
     dispatch(fetchProductsThunk());
   }, []);
@@ -52,7 +56,11 @@ const ProductsSlice = () => {
                 >
                   View
                 </Button>
-                <Button variant="outline-secondary" size="lg">
+                <Button
+                  variant="outline-secondary"
+                  size="lg"
+                  onClick={() => handleEditClick(product.id)}
+                >
                   Edit
                 </Button>
                 <Button

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addProductThunk } from "../thunks/productThunks";
+import { addProductThunk, updateProductThunk } from "../thunks/productThunks";
 
 const initialState = {
   loading: false,
@@ -27,15 +27,30 @@ const addProductSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      // Add Product
       .addCase(addProductThunk.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(addProductThunk.fulfilled, (state, action) => {
+      .addCase(addProductThunk.fulfilled, (state) => {
         state.loading = false;
         state.success = true;
       })
       .addCase(addProductThunk.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+
+      // Update Product
+      .addCase(updateProductThunk.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateProductThunk.fulfilled, (state) => {
+        state.loading = false;
+        state.success = true;
+      })
+      .addCase(updateProductThunk.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
