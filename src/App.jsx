@@ -8,6 +8,7 @@ import Navbars from "./components/Navbars";
 import Counters from "./components/Counters";
 import ProductsSlice from "./components/ProductsSlice";
 import AddProduct from "./components/AddProduct";
+import SingleProduct from "./components/SingleProduct";
 
 function App() {
   return (
@@ -17,9 +18,10 @@ function App() {
           <Navbars />
           <Routes>
             <Route path="/" element={<Todo />} />
-            <Route path="/products" element={<Products />} />
             <Route path="/counters" element={<Counters />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/products-slice" element={<ProductsSlice />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
             <Route path="/add-product" element={<AddProduct />} />
           </Routes>
         </Row>
